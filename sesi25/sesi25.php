@@ -1,6 +1,6 @@
 <?php
     //no 1 Membuat output bilangan ganjil dan genap
-    echo "Tugas no 1 : <br>";
+    echo " no 1 : <br>";
     $bil=10;
         if ($bil % 2 == 0){ 
             echo "$bil Merupakan Bilangan Genap <br><br>"; 
@@ -8,7 +8,7 @@
             echo "$bil Merupakan Bilangan Ganjil <br><br>"; 
     }
     //no 2 Membuat tahun kabisat
-    echo "Tugas no 2 : <br>";
+    echo " no 2 : <br>";
     $tahun = 2023;
         if ($tahun % 4 == 0){ 
             echo "$tahun Merupakan tahun kabisat <br><br>"; 
@@ -16,7 +16,7 @@
             echo "$tahun Bukan merupakan tahun kabisat <br><br>"; 
     }
     //no 3 Membuat grade nilai
-    echo "Tugas no 3 : <br>";
+    echo " no 3 : <br>";
     $nilai = 95;
         if ($nilai >= 90 && $nilai <= 100){ 
             echo "$nilai Nilai A <br><br>"; 
