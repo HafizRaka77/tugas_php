@@ -3,10 +3,10 @@
 
     for($no=1;$no<=10;$no++){
         if($no % 2 == 1 ){
-            echo "$no " ;echo "adalah bilangan ganjil <br>";
+            echo " Angka $no adalah bilangan ganjil <br>";
         }
         else{
-            echo "$no " ;echo "adalah bilangan genap <br>";
+            echo " Angka $no adalah bilangan genap <br>";
         }
     }
     echo"<br>";
@@ -15,10 +15,10 @@
 
     for($tahun=2000; $tahun<=2023; $tahun++){
         if ($tahun % 4 == 0){ 
-            echo "$tahun Merupakan tahun kabisat <br>"; 
+            echo "$tahun Adalah tahun kabisat <br>"; 
         }
         else {
-            echo "$tahun Bukan merupakan tahun kabisat <br>"; 
+            echo "$tahun Bukan tahun kabisat <br>"; 
         }
     }
     echo"<br>";
