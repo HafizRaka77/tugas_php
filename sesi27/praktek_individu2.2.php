@@ -7,6 +7,7 @@
     <style>
         td {
             padding: 5px;
+
         }
 
         table,
@@ -18,24 +19,16 @@
 </head>
 <body>
     <table>
+        <tr>
+            <td style="background-color: DodgerBlue;">No</td>
+            <td style="background-color: DodgerBlue;">Nama</td>
+            <td style="background-color: DodgerBlue;">Kelas</td>
+        </tr>
         <?php
-        for ($i = 0; $i <= 10; $i++) {
-            echo "<tr>";
-            if ($i == 0) {
-                for ($j = 0; $j < 3; $j++) {
-                    echo "<td style='background-color: 	#00BFFF'>";
-                    if ($j == 0) {
-                        echo "No";
-                    } elseif ($j == 1) {
-                        echo "Nama";
-                    } else {
-                        echo "Kelas";
-                    }
-                    echo "</td>";
-                }
-            } else {
-                if ($i % 2 == 0) {
-                    for ($j= 0; $j < 3; $j++) {
+            for ($i = 1; $i <= 10; $i++) {
+                echo "<tr>";
+                    if ($i % 2 == 0) {
+                        for ($j= 0; $j < 3; $j++) {
                         echo "<td>";
                         if ($j == 0) {
                             echo $i;
@@ -46,10 +39,11 @@
                             echo "Kelas ", $a - $i;
                         }
                         echo "</td>";
-                    }
-                } else {
-                    for ($j= 0; $j < 3; $j++) {
-                        echo "<td style='background-color: #D3D3D3'>";
+                        }
+                    } 
+                    else {
+                        for ($j= 0; $j < 3; $j++) {
+                        echo "<td style='background-color: lightgray'>";
                         if ($j == 0) {
                             echo $i;
                         } elseif ($j == 1) {
@@ -63,7 +57,6 @@
                 }
             }
             echo "</tr>";
-        }
         ?>
     </table>
 </body>
