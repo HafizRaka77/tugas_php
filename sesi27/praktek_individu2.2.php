@@ -28,34 +28,17 @@
             for ($i = 1; $i <= 10; $i++) {
                 echo "<tr>";
                     if ($i % 2 == 0) {
-                        for ($j= 0; $j < 3; $j++) {
-                        echo "<td>";
-                        if ($j == 0) {
-                            echo $i;
-                        } elseif ($j == 1) {
-                            echo "Nama ke-$i";
-                        } else {
-                            $a = 11;
-                            echo "Kelas ", $a - $i;
-                        }
-                        echo "</td>";
-                        }
-                    } 
-                    else {
-                        for ($j= 0; $j < 3; $j++) {
-                        echo "<td style='background-color: lightgray'>";
-                        if ($j == 0) {
-                            echo $i;
-                        } elseif ($j == 1) {
-                            echo "Nama ke-$i";
-                        } else {
-                            $a = 11;
-                            echo "Kelas ", $a - $i;
-                        }
-                        echo "</td>";
+                        echo "<td>$i</td>";
+                        echo "<td>Nama ke $i</td>";
+                        $j = 11;
+                        echo "<td>Kelas ".($j - $i)."</td>";
+                    }else {
+                        echo "<td style='background-color: lightgray'>$i</td>";
+                        echo "<td style='background-color: lightgray'>Nama ke $i</td>";
+                        $j = 11;
+                        echo "<td style='background-color: lightgray'>Kelas ".($j - $i)."</td>";        
                     }
                 }
-            }
             echo "</tr>";
         ?>
     </table>
