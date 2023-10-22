@@ -19,17 +19,17 @@
                     $nilai = $_POST['nilai'];
                     
                     switch ($nilai) {
-                        case $nilai > 90 && $nilai <= 100:
+                        case $nilai >= 90 && $nilai <= 100:
                             echo "
                                 Hallo, $nama. Nilai anda adalah $nilai dan anda mendapat grade nilai A ";
                             break;
         
-                        case $nilai > 80 && $nilai <= 90:
+                        case $nilai >= 80 && $nilai < 90:
                             echo "
                                 Hallo, $nama. Nilai anda adalah $nilai dan anda mendapat grade nilai B ";
                             break;
                         
-                        case $nilai > 70 && $nilai <= 80:
+                        case $nilai >= 70 && $nilai < 80:
                             echo "
                                 Hallo, $nama. Nilai anda adalah $nilai dan anda mendapat grade nilai C ";
                             break;
