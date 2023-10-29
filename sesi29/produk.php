@@ -38,18 +38,20 @@
             </div>
         </div>
     </nav>
-    <p class="fw-semibold" align ="center">Data Pelanggan</p>
+    <p class="fw-semibold" align ="center">Data Produk</p>
     <?php
         include "connection.php";
-        $query = mysqli_query($connection, "SELECT * FROM pelanggan");
+        $query = mysqli_query($connection, "SELECT kode_produk, nama_produk, harga, stok, satuan, nama FROM produk JOIN supplier ON produk.supplier_id = supplier.id;");
     ?>
-        <table class ="table table-bordered table-striped table-hover" style="width:600px" align ="center">
+        <table class ="table table-bordered table-striped" style="width:600px" align ="center">
             <tr>
                 <th>No</th>
-                <th>Nama</th>
-                <th>Jenis Kelamin</th>
-                <th>Telpon</th>
-                <th>Alamat</th>
+                <th>Kode Produk</th>
+                <th>Nama Produk</th>
+                <th>Harga</th>
+                <th>Stok</th>
+                <th>Satuan</th>
+                <th>Nama Supplier</th>>
             </tr>
         <?php
             $no = 1;
@@ -57,13 +59,15 @@
         ?>
             <tr>
                 <td><?php echo $no ?></td>
+                <td><?php echo number_format($data["kode_produk"]);?></td>
+                <td><?php echo $data["nama_produk"];?></td>
+                <td><?php echo " Rp ".number_format($data["harga"]);?></td>
+                <td><?php echo $data["stok"];?></td>
+                <td><?php echo $data["satuan"];?></td>
                 <td><?php echo $data["nama"];?></td>
-                <td><?php echo $data["jenis_kelamin"];?></td>
-                <td><?php echo $data["telpon"];?></td>
-                <td><?php echo $data["alamat"];?></td>
             </tr>
             <?php $no++; } ?>
-            </table>
-        </body>
+        </table>
+    </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
