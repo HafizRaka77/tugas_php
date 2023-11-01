@@ -57,7 +57,7 @@
                 <div class="card">
                     <div class="card-header">
                         <p class ="fw-semibold" style="font-size:18px;" >Data Pelanggan
-                            <a href="add_pelanggan.php" class="btn btn-primary float-end">Add Pelanggan</a>
+                            <a href="add_data/add_pelanggan.php" class="btn btn-primary float-end">Add Pelanggan</a>
                         </p>
                     </div>
                     <div class="card-body">

@@ -17,30 +17,15 @@
             <div class="col-md-4 mx-auto">
                 <div class="card">
                     <div class="card-header">
-                        <p class ="fw-semibold" style="font-size:18px;">Add Pelanggan
-                            <a href="index.php" class="btn btn-danger float-end">Back</a>
+                        <p class ="fw-semibold" style="font-size:18px;">Add Supplier
+                            <a href="../supplier.php" class="btn btn-danger float-end">Back</a>
                         </p>
                     </div>
                     <div class="card-body">
-                        <form action="proses_add_pelanggan.php" method="POST">
+                        <form action="../backend/proses_add_supplier.php" method="POST">
                             <div class="mb-3">
                                 <label>Nama</label>
                                 <input type="text" name="nama" class="form-control">
-                            </div>
-                            <div class="mb-3">
-                                <label>Jenis Kelamin</label>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" value="pria" checked="">
-                                    <label class="form-check-label">
-                                    pria
-                                    </label>  
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="jenis_kelamin" value="wanita">
-                                    <label class="form-check-label">
-                                    wanita
-                                    </label>  
-                                </div>
                             </div>
                             <div class="mb-3">
                                 <label>Telpon</label>
