@@ -52,7 +52,7 @@ $supplier = mysqli_query($connection,"SELECT * FROM supplier");
                                 <input type="text" name="satuan" class="form-control">
                             </div>
                             <div class="mb-3">
-                            <label for="id" class="form-label">Id Supplier</label>
+                                <label for="id" class="form-label">Id Supplier</label>
                                 <select class="form-select" name="id">
                                     <?php
                                         foreach ($supplier as $data) {
