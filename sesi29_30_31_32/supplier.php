@@ -67,6 +67,7 @@
                                 <th>Nama</th>
                                 <th>Telpon</th>
                                 <th>Alamat</th>
+                                <th>Action</th>
                             </tr>
                             <?php
                                 $no = 1;                            
@@ -74,9 +75,13 @@
                             ?>
                                 <tr>
                                     <td><?php echo $no ?></td>
-                                    <td><?php echo $data["nama"];?></td>
-                                    <td><?php echo $data["telpon"];?></td>
-                                    <td><?php echo $data["alamat"];?></td>
+                                    <td><?php echo $data['nama'];?></td>
+                                    <td><?php echo $data['telpon'];?></td>
+                                    <td><?php echo $data['alamat'];?></td>
+                                    <td>
+                                        <a class="btn btn-success btn-sm" href="edit_data/edit_supplier.php?id=<?php echo $data['id']?>">Edit</a>
+                                        <a class="btn btn-danger btn-sm" href="delete_data/delete_supplier.php?id=<?php echo $data['id']?>">Delete</a>
+                                    </td>
                                 </tr>
                             <?php $no++; } ?>
                         </table>

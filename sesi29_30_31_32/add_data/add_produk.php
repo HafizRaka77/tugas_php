@@ -52,12 +52,12 @@ $supplier = mysqli_query($connection,"SELECT * FROM supplier");
                                 <input type="text" name="satuan" class="form-control">
                             </div>
                             <div class="mb-3">
-                                <label for="id" class="form-label">Id Supplier</label>
-                                <select class="form-select" name="id">
+                                <label>Id Supplier</label>
+                                <select class="form-select" name="supplier_id">
                                     <?php
                                         foreach ($supplier as $data) {
                                     ?>
-                                        <option value="<?php echo $data['id']; ?>"><?php echo $data['id']; ?></option>
+                                        <option value="<?php echo $data['id']; ?>"><?php echo $data['id']  .' - '. $data['nama'];?></option>
                                     <?php } ?>
                                 </select>
                             </div>

@@ -68,6 +68,7 @@
                                 <th>Jenis Kelamin</th>
                                 <th>Telpon</th>
                                 <th>Alamat</th>
+                                <th>Action</th>
                             </tr>
                             <?php
                                 $no = 1;                            
@@ -78,7 +79,11 @@
                                     <td><?php echo $data['nama'];?></td>
                                     <td><?php echo $data['jenis_kelamin'];?></td>
                                     <td><?php echo $data['telpon'];?></td>
-                                    <td><?php echo $data['alamat'];?></td>    
+                                    <td><?php echo $data['alamat'];?></td>
+                                    <td>
+                                        <a class="btn btn-success btn-sm" href="edit_data/edit_pelanggan.php?id=<?php echo $data['id']?>">Edit</a>
+                                        <a class="btn btn-danger btn-sm" href="delete_data/delete_pelanggan.php?id=<?php echo $data['id']?>"role="button" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?')">Delete</a>
+                                    </td>
                                 </tr>   
                             <?php $no++; } ?>
                         </table>

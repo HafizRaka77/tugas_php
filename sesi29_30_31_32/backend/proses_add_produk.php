@@ -7,9 +7,9 @@
         $harga          = $_POST['harga'];
         $stok           = $_POST['stok'];
         $satuan         = $_POST['satuan'];
-        $id             = $_POST['id'];
+        $supplier_id    = $_POST['supplier_id'];
         // query SQL untuk insert data
-        $result = mysqli_query($connection, "INSERT INTO produk SET kode_produk='$kode_produk',nama_produk='$nama_produk',harga='$harga',stok= '$stok',satuan='$satuan', supplier_id='$id'");
+        $result = mysqli_query($connection, "INSERT INTO produk SET kode_produk='$kode_produk',nama_produk='$nama_produk',harga='$harga',stok= '$stok',satuan='$satuan', supplier_id='$supplier_id'");
         
         // mengalihkan ke halaman index.php
         if ($result) {

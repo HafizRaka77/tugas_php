@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         body{
-            font-family: ;
+            font-family: Arial;
         }
         nav{
             margin-bottom: 30px;
@@ -40,7 +40,7 @@
     </nav>
     <?php
         require "connection.php";
-        $result = mysqli_query($connection, "SELECT kode_produk, nama_produk, harga, stok, satuan, nama FROM produk JOIN supplier ON produk.supplier_id = supplier.id;");
+        $result = mysqli_query($connection, "SELECT * FROM produk JOIN supplier ON produk.supplier_id = supplier.id;");
     ?>
     <?php
     if (isset($_GET["msg"])) {
@@ -53,7 +53,7 @@
     ?>
     <div class="container mb-4">
         <div class="row">
-            <div class="col-md-7 mx-auto">
+            <div class="col-md-10 mx-auto">
                 <div class="card">
                     <div class="card-header">
                         <p class ="fw-semibold" style="font-size:18px;" >Data Produk
@@ -70,6 +70,7 @@
                                 <th>Stok</th>
                                 <th>Satuan</th>
                                 <th>Nama Supplier</th>
+                                <th>Action</th>
                             </tr>
                             <?php
                                 $no = 1;                            
@@ -77,12 +78,16 @@
                             ?>
                                 <tr>
                                     <td><?php echo $no ?></td>
-                                    <td><?php echo number_format($data["kode_produk"]);?></td>
-                                    <td><?php echo $data["nama_produk"];?></td>
-                                    <td><?php echo " Rp ".number_format($data["harga"]);?></td>
-                                    <td><?php echo $data["stok"];?></td>
-                                    <td><?php echo $data["satuan"];?></td>
-                                    <td><?php echo $data["nama"];?></td>
+                                    <td><?php echo number_format($data['kode_produk']);?></td>
+                                    <td><?php echo $data['nama_produk'];?></td>
+                                    <td><?php echo " Rp ".number_format($data['harga']);?></td>
+                                    <td><?php echo $data['stok'];?></td>
+                                    <td><?php echo $data['satuan'];?></td>
+                                    <td><?php echo $data['nama'];?></td>
+                                     <td>
+                                        <a class="btn btn-success btn-sm" href="edit_data/edit_produk.php?id_produk=<?php echo $data['id_produk']?>">Edit</a>
+                                        <a class="btn btn-danger btn-sm" href="delete_data/delete_produk.php?id_produk=<?php echo $data['id_produk']?>" role="button" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?')">Delete</a>
+                                    </td>
                                 </tr>
                             <?php $no++; } ?>
                         </table>
