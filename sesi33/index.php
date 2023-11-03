@@ -3,9 +3,9 @@
     echo " no 1 : <br>";
     $no = array('satu', 'dua', 'tiga', 'empat', 'lima');
     for ($i = count($no)-1; $i >=0 ; $i--) { 
-        echo $no[$i] . '<br>';
+        echo $no[$i];
     }
-    echo "<br>";
+    echo "<br><br>";
     
     // no 2
     echo " no 2 : <br>";
