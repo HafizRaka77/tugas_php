@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sesi 29</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+    
     <style>
         body{
             font-family: Arial;
@@ -61,35 +69,39 @@
                         </p>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
-                            <tr>
-                                <th>No</th>
-                                <th>Kode Produk</th>
-                                <th>Nama Produk</th>
-                                <th>Harga</th>
-                                <th>Stok</th>
-                                <th>Satuan</th>
-                                <th>Nama Supplier</th>
-                                <th>Action</th>
-                            </tr>
-                            <?php
-                                $no = 1;                            
-                                while ($data = mysqli_fetch_array($result)) {
-                            ?>
+                        <table id="example" class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
-                                    <td><?php echo $no ?></td>
-                                    <td><?php echo number_format($data['kode_produk']);?></td>
-                                    <td><?php echo $data['nama_produk'];?></td>
-                                    <td><?php echo " Rp ".number_format($data['harga']);?></td>
-                                    <td><?php echo $data['stok'];?></td>
-                                    <td><?php echo $data['satuan'];?></td>
-                                    <td><?php echo $data['nama'];?></td>
-                                     <td>
-                                        <a class="btn btn-success btn-sm" href="edit_data/edit_produk.php?id_produk=<?php echo $data['id_produk']?>">Edit</a>
-                                        <a class="btn btn-danger btn-sm" href="delete_data/delete_produk.php?id_produk=<?php echo $data['id_produk']?>" role="button" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?')">Delete</a>
-                                    </td>
+                                    <th>No</th>
+                                    <th>Kode Produk</th>
+                                    <th>Nama Produk</th>
+                                    <th>Harga</th>
+                                    <th>Stok</th>
+                                    <th>Satuan</th>
+                                    <th>Nama Supplier</th>
+                                    <th>Action</th>
                                 </tr>
-                            <?php $no++; } ?>
+                            </thead>    
+                            <tbody>
+                                <?php
+                                    $no = 1;                            
+                                    while ($data = mysqli_fetch_array($result)) {
+                                ?>
+                                    <tr>
+                                        <td><?php echo $no ?></td>
+                                        <td><?php echo number_format($data['kode_produk']);?></td>
+                                        <td><?php echo $data['nama_produk'];?></td>
+                                        <td><?php echo " Rp ".number_format($data['harga']);?></td>
+                                        <td><?php echo $data['stok'];?></td>
+                                        <td><?php echo $data['satuan'];?></td>
+                                        <td><?php echo $data['nama'];?></td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="edit_data/edit_produk.php?id_produk=<?php echo $data['id_produk']?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="delete_data/delete_produk.php?id_produk=<?php echo $data['id_produk']?>" role="button" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                <?php $no++; } ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -97,5 +109,10 @@
         </div>
     </div>  
     </body>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script type="text/javascript">	 
+	$(document).ready(function () {	
+        $('#example').DataTable();
+	});
+</script>

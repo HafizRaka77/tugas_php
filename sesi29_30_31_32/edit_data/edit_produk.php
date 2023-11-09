@@ -45,23 +45,23 @@
                         <form action="../backend/proses_edit_produk.php?id=<?php echo $id_produk; ?>" method="POST">
                             <div class="mb-3">
                                 <label>Kode Produk</label>
-                                <input type="number" name="kode_produk" class="form-control" value="<?php echo $kode_produk;?>">
+                                <input type="number" name="kode_produk" class="form-control" required="" value="<?php echo $kode_produk;?>">
                             </div>
                             <div class="mb-3">
                                 <label>Nama Produk</label>
-                                <input type="text" name="nama_produk" class="form-control" value="<?php echo $nama_produk;?>">
+                                <input type="text" name="nama_produk" class="form-control" required="" value="<?php echo $nama_produk;?>">
                             </div>
                             <div class="mb-3">
                                 <label>Harga</label>
-                                <input type="number" name="harga" class="form-control" value="<?php echo $harga; ?>">
+                                <input type="number" name="harga" class="form-control" required="" value="<?php echo $harga; ?>">
                             </div>
                             <div class="mb-3">
                                 <label>Stok</label>
-                                <input type="number" class="form-control" name="stok" value="<?php echo $stok; ?>">
+                                <input type="number" class="form-control" name="stok" required="" value="<?php echo $stok; ?>">
                             </div>
                             <div class="mb-3">
                                 <label>Satuan</label>
-                                <input type="text" name="satuan" class="form-control" value="<?php echo $satuan;?>">
+                                <input type="text" name="satuan" class="form-control" required="" value="<?php echo $satuan;?>">
                             </div>
                             <div class="mb-3">
                                 <label>Id Supplier</label>

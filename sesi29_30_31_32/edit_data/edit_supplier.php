@@ -41,18 +41,18 @@
                         <form action="../backend/proses_edit_supplier.php?id=<?php echo $id; ?>" method="POST">
                             <div class="mb-3">
                                 <label>Nama</label>
-                                <input type="text" name="nama" class="form-control" value="<?php echo $nama;?>">
+                                <input type="text" name="nama" class="form-control" required="" value="<?php echo $nama;?>">
                             </div>
                             <div class="mb-3">
                                 <label>Telpon</label>
-                                <input type="number" name="telpon" class="form-control" value="<?php echo $telpon; ?>">
+                                <input type="number" name="telpon" class="form-control" required="" value="<?php echo $telpon; ?>">
                             </div>
                             <div class="mb-3">
                                 <label>Alamat</label>
-                                <textarea class="form-control "name="alamat" rows="3"><?php echo $alamat; ?></textarea>
+                                <textarea class="form-control "name="alamat" rows="3" required=""><?php echo $alamat; ?></textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="update"class="btn btn-primary">Update</button>
+                                <button type="submit" name="update" class="btn btn-primary">Update</button>
                             </div>
                         </form>
                     </div>
