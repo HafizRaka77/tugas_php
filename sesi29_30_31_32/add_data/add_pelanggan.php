@@ -23,7 +23,7 @@
                         </p>
                     </div>
                     <div class="card-body">
-                        <form action="../backend/proses_add_pelanggan.php" method="POST">
+                        <form id="form_add" action="../backend/proses_add_pelanggan.php" method="POST">
                             <div class="mb-3">
                                 <label>Nama</label>
                                 <input type="text" name="nama" id="nama" class="form-control" required="">
@@ -45,14 +45,14 @@
                             </div>
                             <div class="mb-3">
                                 <label>Telpon</label>
-                                <input type="number" name="telpon" id="telpon" class="form-control" required="">
+                                <input type="number" name="telpon" id="telp" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Alamat</label>
                                 <textarea class="form-control "name="alamat" id="alamat" rows="3" required=""></textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="submit" id="submit" class="btn btn-primary" disabled="">Submit</button>
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary" disabled="" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -64,12 +64,19 @@
 </html>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
-$(document).ready(function () {
-    $("#nama, #telpon, #alamat").on("keyup", function() {
-        $("#submit").prop('disabled', false);
-    });
-    $("#jenis_kelamin").on("change", function() {
-        $("#submit").prop('disabled', false);
+$(document).ready(function(){
+    $('#form_add input').on('input', function() {
+        var formFilled = true;
+            $('#form_add input').each(function() {
+                if ($(this).val() === '') {
+                formFilled = false;
+            }
+        });
+        if (formFilled) {
+          $('#submit').prop('disabled', false);
+        } else {
+          $('#submit').prop('disabled', true);
+        }
     });
 });
 </script>

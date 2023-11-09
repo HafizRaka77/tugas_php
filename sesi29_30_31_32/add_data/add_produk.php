@@ -31,7 +31,7 @@ $supplier = mysqli_query($connection,"SELECT * FROM supplier");
                         </p>
                     </div>
                     <div class="card-body">
-                        <form action="../backend/proses_add_produk.php" method="POST">
+                        <form id="form_add" action="../backend/proses_add_produk.php" method="POST">
                             <div class="mb-3">
                                 <label>Kode Produk</label>
                                 <input type="number" name="kode_produk" id="kode_produk" class="form-control" required="">
@@ -54,7 +54,7 @@ $supplier = mysqli_query($connection,"SELECT * FROM supplier");
                             </div>
                             <div class="mb-3">
                                 <label>Id Supplier</label>
-                                <select class="form-select" name="supplier_id" id="supplier_id">
+                                <select class="form-select" name="supplier_id" id="supp_id">
                                     <?php
                                         foreach ($supplier as $data) {
                                     ?>
@@ -63,7 +63,7 @@ $supplier = mysqli_query($connection,"SELECT * FROM supplier");
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="submit" id="submit" class="btn btn-primary" disabled="">Submit</button>
+                                <button type="submit" name="submit" id="submit" class="btn btn-primary" disabled="" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -76,11 +76,18 @@ $supplier = mysqli_query($connection,"SELECT * FROM supplier");
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
 $(document).ready(function () {
-    $("#kode_produk, #nama_produk, #harga, #stok, #satuan").on("keyup", function() {
-        $("#submit").prop('disabled', false);
-    });
-    $("#supplier_id").on("change", function() {
-        $("#submit").prop('disabled', false);
+    $('#form_add input').on('input', function() {
+        var formFilled = true;
+            $('#form_add input').each(function() {
+                if ($(this).val() === '') {
+                formFilled = false;
+            }
+        });
+        if (formFilled) {
+            $('#submit').prop('disabled', false);
+        } else {
+            $('#submit').prop('disabled', true);
+        }
     });
 });
 </script>

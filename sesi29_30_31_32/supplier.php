@@ -90,7 +90,7 @@
                                         <td><?php echo $data['alamat'];?></td>
                                         <td>
                                             <a class="btn btn-success btn-sm" href="edit_data/edit_supplier.php?id=<?php echo $data['id']?>">Edit</a>
-                                            <a class="btn btn-danger btn-sm" href="delete_data/delete_supplier.php?id=<?php echo $data['id']?>">Delete</a>
+                                            <a class="btn btn-danger btn-sm" href="delete_data/delete_supplier.php?id=<?php echo $data['id']?>"role="button" onclick="return confirm('Are you sure to delete this data?')">Delete</a>
                                         </td>
                                     </tr>
                                 <?php $no++; } ?>

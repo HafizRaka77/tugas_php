@@ -97,7 +97,7 @@
                                         <td><?php echo $data['nama'];?></td>
                                         <td>
                                             <a class="btn btn-success btn-sm" href="edit_data/edit_produk.php?id_produk=<?php echo $data['id_produk']?>">Edit</a>
-                                            <a class="btn btn-danger btn-sm" href="delete_data/delete_produk.php?id_produk=<?php echo $data['id_produk']?>" role="button" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?')">Delete</a>
+                                            <a class="btn btn-danger btn-sm" href="delete_data/delete_produk.php?id_produk=<?php echo $data['id_produk']?>" role="button" onclick="return confirm('Are you sure to delete this data?')">Delete</a>
                                         </td>
                                     </tr>
                                 <?php $no++; } ?>
