@@ -133,7 +133,7 @@
                                 <input type="number" class="form-control" name="harga_pinjam" value="<?php echo $harga_pinjam; ?>" required="">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="update" class="btn btn-primary">Update</button>
+                                <button type="submit" name="update" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Update</button>
                             </div>
                         </form>
                     </div>

@@ -61,7 +61,7 @@
                                 <textarea class="form-control" name="alamat" rows="3" required=""><?php echo $alamat; ?></textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="update" class="btn btn-primary">Update</button>
+                                <button type="submit" name="update" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Update</button>
                             </div>
                         </form>
                     </div>

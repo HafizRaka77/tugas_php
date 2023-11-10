@@ -44,7 +44,7 @@
                                 <textarea class="form-control "name="alamat" rows="3" required=""></textarea>
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
                             </div>
                         </form>
                     </div>
