@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buku</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
     <style>
         body{
             font-family: Arial;
@@ -67,36 +74,40 @@
                         </p>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered table-striped">
-                            <tr>
-                                <th>ISBN</th>
-                                <th>Judul</th>
-                                <th>Tahun</th>
-                                <th>Nama Penerbit</th>
-                                <th>Nama Pengarang</th>
-                                <th>Nama Katalog</th>
-                                <th>Stok</th>
-                                <th>Harga Pinjam</th>
-                                <th>Action</th>
-                            </tr>
-                            <?php                          
-                                while ($data = mysqli_fetch_array($result)) {
-                            ?>
+                        <table id = "myTable" class="table table-bordered table-striped">
+                            <thead>
                                 <tr>
-                                    <td><?php echo $data['isbn'] ?></td>
-                                    <td><?php echo $data['judul'];?></td>
-                                    <td><?php echo $data['tahun'];?></td>
-                                    <td><?php echo $data['nama_penerbit'];?></td>
-                                    <td><?php echo $data['nama_pengarang'];?></td>
-                                    <td><?php echo $data['nama'];?></td>
-                                    <td><?php echo $data['qty_stok'];?></td>
-                                    <td><?php echo "Rp ".number_format($data['harga_pinjam']); ?></td>
-                                    <td>
-                                        <a class="btn btn-success btn-sm" href="edit_data/edit_buku.php?isbn=<?php echo $data["isbn"]?>">Edit</a>
-                                        <a class="btn btn-danger btn-sm" href="delete_data/delete_buku.php?isbn=<?php echo $data["isbn"]?>" role="button" onclick="return confirm('Apakah anda yakin untuk menghapus data ini?')">Delete</a>
-                                    </td>
+                                    <th>ISBN</th>
+                                    <th>Judul</th>
+                                    <th>Tahun</th>
+                                    <th>Nama Penerbit</th>
+                                    <th>Nama Pengarang</th>
+                                    <th>Nama Katalog</th>
+                                    <th>Stok</th>
+                                    <th>Harga Pinjam</th>
+                                    <th>Action</th>
                                 </tr>
-                            <?php } ?>
+                            </thead>
+                            <tbody>    
+                                <?php                          
+                                    while ($data = mysqli_fetch_array($result)) {
+                                ?>
+                                    <tr>
+                                        <td><?php echo $data['isbn'] ?></td>
+                                        <td><?php echo $data['judul'];?></td>
+                                        <td><?php echo $data['tahun'];?></td>
+                                        <td><?php echo $data['nama_penerbit'];?></td>
+                                        <td><?php echo $data['nama_pengarang'];?></td>
+                                        <td><?php echo $data['nama'];?></td>
+                                        <td><?php echo $data['qty_stok'];?></td>
+                                        <td><?php echo "Rp ".number_format($data['harga_pinjam']); ?></td>
+                                        <td>
+                                            <a class="btn btn-success btn-sm" href="edit_data/edit_buku.php?isbn=<?php echo $data["isbn"]?>">Edit</a>
+                                            <a class="btn btn-danger btn-sm" href="delete_data/delete_buku.php?isbn=<?php echo $data["isbn"]?>" role="button" onclick="return confirm('Are you sure to delete this data?')">Delete</a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -108,6 +119,11 @@
             Copyright © 2023 Hafiz Raka Pradana<b>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script type="text/javascript">	 
+	$(document).ready(function () {	
+        $('#myTable').DataTable();
+	});
+</script>

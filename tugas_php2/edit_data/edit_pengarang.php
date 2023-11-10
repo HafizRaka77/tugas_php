@@ -42,23 +42,23 @@
                         <form action="../backend/proses_edit_pengarang.php?id=<?php echo $id; ?>" method="post">
                             <div class="mb-3">
                                 <label>Id Pengarang</label>
-                                <input type="text" class="form-control" name="id" value="<?php echo $id; ?>">
+                                <input type="text" class="form-control" name="id" value="<?php echo $id; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Nama Pengarang</label>
-                                <input type="text" class="form-control" name="nama" value="<?php echo $nama; ?>">
+                                <input type="text" class="form-control" name="nama" value="<?php echo $nama; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="text" class="form-control" name="email" value="<?php echo $email; ?>">
+                                <input type="text" class="form-control" name="email" value="<?php echo $email; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Telp</label>
-                                <input type="number" class="form-control" name="telp" value="<?php echo $telp; ?>">
+                                <input type="number" class="form-control" name="telp" value="<?php echo $telp; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Alamat</label>
-                                <textarea class="form-control" name="alamat" rows="3"><?php echo $alamat; ?></textarea>
+                                <textarea class="form-control" name="alamat" rows="3" required=""><?php echo $alamat; ?></textarea>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="update" class="btn btn-primary">Update</button>

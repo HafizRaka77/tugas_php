@@ -48,15 +48,15 @@
                         <form action="../backend/proses_edit_buku.php?isbn=<?php echo $isbn; ?>" method="post">
                             <div class="mb-3">
                                 <label>ISBN</label>
-                                <input type="text" class="form-control" name="isbn" value="<?php echo $isbn;?>">
+                                <input type="text" class="form-control" name="isbn" value="<?php echo $isbn;?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Judul</label>
-                                <input type="text" class="form-control" name="judul" value="<?php echo $judul; ?>">
+                                <input type="text" class="form-control" name="judul" value="<?php echo $judul; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Tahun</label>
-                                <input type="number" class="form-control" name="tahun" value="<?php echo $tahun; ?>">
+                                <input type="number" class="form-control" name="tahun" value="<?php echo $tahun; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Id Penerbit</label>
@@ -126,11 +126,11 @@
                             </div>
                             <div class="mb-3">
                                 <label>Stok</label>
-                                <input type="number" class="form-control" name="stok" id="stok" value="<?php echo $stok; ?>">
+                                <input type="number" class="form-control" name="stok" id="stok" value="<?php echo $stok; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Harga Pinjam</label>
-                                <input type="number" class="form-control" name="harga_pinjam" value="<?php echo $harga_pinjam; ?>">
+                                <input type="number" class="form-control" name="harga_pinjam" value="<?php echo $harga_pinjam; ?>" required="">
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="update" class="btn btn-primary">Update</button>

@@ -25,23 +25,23 @@
                         <form action="../backend/proses_add_pengarang.php" method="POST">
                             <div class="mb-3">
                                 <label>Id Pengarang</label>
-                                <input type="text" name="id" class="form-control">
+                                <input type="text" name="id" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Nama Pengarang</label>
-                                <input type="text" name="nama" class="form-control">
+                                <input type="text" name="nama" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Email</label>
-                                <input type="email" name="email" class="form-control">
+                                <input type="email" name="email" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Telp</label>
-                                <input type="number" name="telp" class="form-control">
+                                <input type="number" name="telp" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Alamat</label>
-                                <textarea class="form-control "name="alamat" rows="3"></textarea>
+                                <textarea class="form-control "name="alamat" rows="3" required=""></textarea>
                             </div>
                             <div class="mb-3">
                                 <button type="submit" name="submit" class="btn btn-primary">Submit</button>

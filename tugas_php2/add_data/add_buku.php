@@ -34,15 +34,15 @@ $katalog = mysqli_query($connection,"SELECT * FROM katalog");
                         <form action="../backend/proses_add_buku.php" method="POST">
                             <div class="mb-3">
                                 <label>ISBN</label>
-                                <input type="text" name="isbn" class="form-control">
+                                <input type="text" name="isbn" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Judul</label>
-                                <input type="text" name="judul" class="form-control">
+                                <input type="text" name="judul" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Tahun</label>
-                                <input type="number" name="tahun" class="form-control">
+                                <input type="number" name="tahun" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Id Penerbit</label>
@@ -76,14 +76,14 @@ $katalog = mysqli_query($connection,"SELECT * FROM katalog");
                             </div>
                             <div class="mb-3">
                                 <label>Stok</label>
-                                <input type="number" name="stok" class="form-control">
+                                <input type="number" name="stok" class="form-control" required="">
                             </div>
                             <div class="mb-3">
                                 <label>Harga Pinjam</label>
-                                <input type="number" name="harga_pinjam" class="form-control">
+                                <input type="number" name="harga_pinjam" class="form-control" required="">
                             </div>
                             <div class="mb-3">
-                                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Are you sure want to save your changes?');">Submit</button>
                             </div>
                         </form>
                     </div>
